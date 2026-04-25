@@ -7,13 +7,13 @@ export const bioStyles = ['minimal', 'creative', 'professional', 'fun'] as const
 export type BioStyle = (typeof bioStyles)[number];
 
 export const emojiCollections: Record<string, string[]> = {
-  business: ['\u{1F4BC}', '\u{1F4CA}', '\u{1F3AF}', '\u{1F680}', '\u{1F4A1}', '\u{1F4B0}', '\u2705'],
-  creative: ['\u{1F3A8}', '\u2728', '\u{1F308}', '\u{1F525}', '\u{1F31F}', '\u{1F4AB}', '\u{1F3AD}'],
-  lifestyle: ['\u2764\uFE0F', '\u2615', '\u{1F30D}', '\u{1F33F}', '\u{1F4F8}', '\u{1F3B5}', '\u{1F381}'],
-  tech: ['\u{1F4BB}', '\u{1F4F1}', '\u2699\uFE0F', '\u{1F916}', '\u{1F310}', '\u{1F50C}', '\u{1F4A0}'],
-  fitness: ['\u{1F4AA}', '\u{1F3CB}\uFE0F', '\u{1F525}', '\u{1F947}', '\u{1F3C3}', '\u{1F34E}', '\u{1F49A}'],
-  food: ['\u{1F37D}\uFE0F', '\u{1F373}', '\u{1F370}', '\u{1F355}', '\u{1F372}', '\u2615', '\u{1F374}'],
-  travel: ['\u2708\uFE0F', '\u{1F30D}', '\u{1F5FA}\uFE0F', '\u{1F3D6}\uFE0F', '\u26F0\uFE0F', '\u{1F9ED}', '\u{1F30E}'],
+  business: ['\u{1F4BC}', '\u{1F4CA}', '\u{1F3AF}', '\u{1F680}', '\u{1F4A1}', '\u{1F4B0}', '✅'],
+  creative: ['\u{1F3A8}', '✨', '\u{1F308}', '\u{1F525}', '\u{1F31F}', '\u{1F4AB}', '\u{1F3AD}'],
+  lifestyle: ['❤️', '☕', '\u{1F30D}', '\u{1F33F}', '\u{1F4F8}', '\u{1F3B5}', '\u{1F381}'],
+  tech: ['\u{1F4BB}', '\u{1F4F1}', '⚙️', '\u{1F916}', '\u{1F310}', '\u{1F50C}', '\u{1F4A0}'],
+  fitness: ['\u{1F4AA}', '\u{1F3CB}️', '\u{1F525}', '\u{1F947}', '\u{1F3C3}', '\u{1F34E}', '\u{1F49A}'],
+  food: ['\u{1F37D}️', '\u{1F373}', '\u{1F370}', '\u{1F355}', '\u{1F372}', '☕', '\u{1F374}'],
+  travel: ['✈️', '\u{1F30D}', '\u{1F5FA}️', '\u{1F3D6}️', '⛰️', '\u{1F9ED}', '\u{1F30E}'],
   music: ['\u{1F3B5}', '\u{1F3B6}', '\u{1F3A4}', '\u{1F3B8}', '\u{1F3B9}', '\u{1F3A7}', '\u{1F3BC}'],
 };
 

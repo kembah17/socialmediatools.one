@@ -19,11 +19,11 @@ export const platforms = ['instagram', 'facebook', 'linkedin', 'twitter', 'tikto
 export type Platform = (typeof platforms)[number];
 
 export const emojiByTone: Record<string, string[]> = {
-  professional: ['\u{1F4BC}', '\u{1F4CA}', '\u{1F3AF}', '\u2728', '\u{1F4A1}', '\u{1F680}', '\u{1F4DD}', '\u2705'],
-  casual: ['\u{1F60A}', '\u{1F389}', '\u2764\uFE0F', '\u{1F44D}', '\u{1F31F}', '\u{1F60D}', '\u{1F525}', '\u{1F4F8}'],
+  professional: ['\u{1F4BC}', '\u{1F4CA}', '\u{1F3AF}', '✨', '\u{1F4A1}', '\u{1F680}', '\u{1F4DD}', '✅'],
+  casual: ['\u{1F60A}', '\u{1F389}', '❤️', '\u{1F44D}', '\u{1F31F}', '\u{1F60D}', '\u{1F525}', '\u{1F4F8}'],
   funny: ['\u{1F602}', '\u{1F923}', '\u{1F60E}', '\u{1F92A}', '\u{1F648}', '\u{1F60F}', '\u{1F47B}', '\u{1F921}'],
-  inspirational: ['\u{1F31F}', '\u2728', '\u{1F4AA}', '\u{1F525}', '\u{1F3AF}', '\u{1F680}', '\u{1F33F}', '\u{1F308}'],
-  promotional: ['\u{1F525}', '\u{1F6A8}', '\u{1F381}', '\u{1F4B0}', '\u2B50', '\u{1F389}', '\u{1F4E2}', '\u{1F4A5}'],
+  inspirational: ['\u{1F31F}', '✨', '\u{1F4AA}', '\u{1F525}', '\u{1F3AF}', '\u{1F680}', '\u{1F33F}', '\u{1F308}'],
+  promotional: ['\u{1F525}', '\u{1F6A8}', '\u{1F381}', '\u{1F4B0}', '⭐', '\u{1F389}', '\u{1F4E2}', '\u{1F4A5}'],
 };
 
 export const hookTemplates: string[] = [

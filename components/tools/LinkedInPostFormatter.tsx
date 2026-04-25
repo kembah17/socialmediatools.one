@@ -37,10 +37,10 @@ function toItalic(text: string): string {
 
 const EMOJI_CATEGORIES: Record<string, string[]> = {
   'Smileys': ['\u{1F600}', '\u{1F603}', '\u{1F604}', '\u{1F601}', '\u{1F606}', '\u{1F605}', '\u{1F602}', '\u{1F60A}', '\u{1F607}', '\u{1F642}', '\u{1F643}', '\u{1F609}', '\u{1F60C}', '\u{1F60D}', '\u{1F618}', '\u{1F970}', '\u{1F60B}', '\u{1F61C}', '\u{1F92A}', '\u{1F914}'],
-  'Gestures': ['\u{1F44D}', '\u{1F44E}', '\u{1F44F}', '\u{1F64C}', '\u{1F4AA}', '\u270C\uFE0F', '\u{1F91E}', '\u{1F91F}', '\u{1F449}', '\u{1F446}', '\u{1F44B}', '\u{1F64F}', '\u{1F91D}', '\u270A', '\u{1F44A}', '\u{1F918}'],
+  'Gestures': ['\u{1F44D}', '\u{1F44E}', '\u{1F44F}', '\u{1F64C}', '\u{1F4AA}', '✌️', '\u{1F91E}', '\u{1F91F}', '\u{1F449}', '\u{1F446}', '\u{1F44B}', '\u{1F64F}', '\u{1F91D}', '✊', '\u{1F44A}', '\u{1F918}'],
   'Business': ['\u{1F4BC}', '\u{1F4CA}', '\u{1F4C8}', '\u{1F4C9}', '\u{1F4B0}', '\u{1F4B5}', '\u{1F3AF}', '\u{1F680}', '\u{1F4A1}', '\u{1F4DD}', '\u{1F4CC}', '\u{1F4CE}', '\u{1F4CB}', '\u{1F4E7}', '\u{1F4F1}', '\u{1F4BB}'],
-  'Symbols': ['\u2705', '\u274C', '\u2B50', '\u{1F525}', '\u{1F4A5}', '\u2728', '\u{1F31F}', '\u{1F4AB}', '\u26A1', '\u{1F308}', '\u2764\uFE0F', '\u{1F49A}', '\u{1F499}', '\u{1F49C}', '\u{1F49B}', '\u{1F9E1}'],
-  'Objects': ['\u{1F3C6}', '\u{1F396}\uFE0F', '\u{1F4DA}', '\u{1F4D6}', '\u{1F4F0}', '\u{1F4E2}', '\u{1F514}', '\u{1F50D}', '\u{1F512}', '\u{1F513}', '\u{1F527}', '\u2699\uFE0F', '\u{1F6E0}\uFE0F', '\u{1F4A4}', '\u{1F4AC}', '\u{1F4AD}'],
+  'Symbols': ['✅', '❌', '⭐', '\u{1F525}', '\u{1F4A5}', '✨', '\u{1F31F}', '\u{1F4AB}', '⚡', '\u{1F308}', '❤️', '\u{1F49A}', '\u{1F499}', '\u{1F49C}', '\u{1F49B}', '\u{1F9E1}'],
+  'Objects': ['\u{1F3C6}', '\u{1F396}️', '\u{1F4DA}', '\u{1F4D6}', '\u{1F4F0}', '\u{1F4E2}', '\u{1F514}', '\u{1F50D}', '\u{1F512}', '\u{1F513}', '\u{1F527}', '⚙️', '\u{1F6E0}️', '\u{1F4A4}', '\u{1F4AC}', '\u{1F4AD}'],
 };
 
 const HOOK_TEMPLATES = [
@@ -62,7 +62,7 @@ const CTA_TEMPLATES = [
   '\u{1F4AC} What\'s your take? Drop a comment below.',
   '\u{1F514} Ring the bell on my profile for daily tips.',
   '\u{1F517} Link in comments for the full guide.',
-  '\u2764\uFE0F Like this post if you agree.',
+  '❤️ Like this post if you agree.',
   '\u{1F4E9} DM me "START" for my free resource.',
   '\u{1F4CC} Save this post for later reference.',
 ];
@@ -106,7 +106,7 @@ export function LinkedInPostFormatter() {
       setText(text.slice(0, start) + formatted + text.slice(end));
     } else if (type === 'bullet') {
       const lines = selected ? selected.split('\n') : [''];
-      const bulleted = lines.map((l) => `\u2022 ${l}`).join('\n');
+      const bulleted = lines.map((l) => `• ${l}`).join('\n');
       setText(text.slice(0, start) + bulleted + text.slice(end));
     } else if (type === 'numbered') {
       const lines = selected ? selected.split('\n') : [''];
@@ -133,7 +133,7 @@ export function LinkedInPostFormatter() {
           <button onClick={() => applyFormat('bullet')} title="Bullet list"
             className="px-3 py-2 rounded-lg text-sm transition-all cursor-pointer"
             style={{ backgroundColor: 'var(--color-bg-secondary)', color: 'var(--color-text-secondary)', border: '1px solid var(--color-border)' }}>
-            \u2022 List
+            • List
           </button>
           <button onClick={() => applyFormat('numbered')} title="Numbered list"
             className="px-3 py-2 rounded-lg text-sm transition-all cursor-pointer"
@@ -230,7 +230,7 @@ export function LinkedInPostFormatter() {
               <div className="w-10 h-10 rounded-full" style={{ backgroundColor: 'var(--color-brand)' }} />
               <div>
                 <div className="font-semibold text-sm" style={{ color: 'var(--color-text-heading)' }}>Your Name</div>
-                <div className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Your headline \u2022 Just now</div>
+                <div className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Your headline • Just now</div>
               </div>
             </div>
             <div className="whitespace-pre-wrap leading-relaxed" style={{ color: 'var(--color-text-primary)' }}>

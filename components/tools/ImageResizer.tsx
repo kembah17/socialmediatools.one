@@ -142,12 +142,12 @@ export function ImageResizer() {
           onDrop={handleDrop}
         >
           <input ref={inputRef} type="file" accept="image/*" onChange={handleFile} className="hidden" />
-          <div className="text-4xl mb-3">{image ? '\u{1F5BC}\uFE0F' : '\u{1F4E4}'}</div>
+          <div className="text-4xl mb-3">{image ? '\u{1F5BC}️' : '\u{1F4E4}'}</div>
           {image ? (
             <div>
               <p className="font-medium" style={{ color: 'var(--color-text-heading)' }}>{fileName}</p>
               <p className="text-sm mt-1" style={{ color: 'var(--color-text-tertiary)' }}>
-                Original: {image.width} x {image.height}px \u2022 Click or drop to replace
+                Original: {image.width} x {image.height}px • Click or drop to replace
               </p>
             </div>
           ) : (
@@ -232,7 +232,7 @@ export function ImageResizer() {
       {previewUrl && (
         <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-md)' }}>
           <h3 className="font-semibold mb-3" style={{ color: 'var(--color-text-heading)' }}>
-            Preview ({preset.w} x {preset.h}px \u2022 {mode === 'crop' ? 'Cropped' : 'Fitted'})
+            Preview ({preset.w} x {preset.h}px • {mode === 'crop' ? 'Cropped' : 'Fitted'})
           </h3>
           <div className="flex justify-center rounded-lg p-4" style={{ backgroundColor: 'var(--color-bg-muted)' }}>
             <img

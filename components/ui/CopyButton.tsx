@@ -30,7 +30,7 @@ export function CopyButton({ text, label = 'Copy' }: { text: string; label?: str
         color: '#FFFFFF',
       }}
     >
-      {copied ? '\u2713 Copied!' : label}
+      {copied ? '✓ Copied!' : label}
     </button>
   );
 }

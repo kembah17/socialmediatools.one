@@ -18,7 +18,7 @@ export const tools: Tool[] = [
     name: 'Caption Generator',
     slug: '/caption-generator',
     description: 'Create engaging captions for Instagram, Facebook, LinkedIn, Twitter, and TikTok. Choose your tone and get multiple variations instantly.',
-    icon: '\u270D',
+    icon: '✍',
     shortDesc: 'Create engaging captions for any platform',
   },
   {
