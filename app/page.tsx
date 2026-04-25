@@ -42,7 +42,7 @@ export default function HomePage() {
             <a href="/hashtag-generator/" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}>
               Get Started Free
             </a>
-            <a href="#tools" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'var(--color-bg-card)', color: 'var(--color-text-primary)', border: '1px solid var(--color-border)' }}>
+            <a href="#tools" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'var(--color-bg-card)', color: 'var(--color-brand)', border: '2px solid var(--color-brand)' }}>
               Explore Tools
             </a>
           </div>
