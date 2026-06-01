@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     title: "Social Media Tools - Free Online Tools for Social Media",
     description:
       "Free online social media tools: hashtag generator, caption generator, Instagram bio generator, YouTube tag generator, and more.",
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Social Media Tools' }],
   },
   twitter: {
     card: "summary_large_image",
