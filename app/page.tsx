@@ -15,11 +15,13 @@ export const metadata: Metadata = {
     url: 'https://socialmediatools.one',
     siteName: 'SocialMediaTools.one',
     type: 'website',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'SocialMediaTools.one - Free Social Media Tools' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Free Social Media Tools Suite | SocialMediaTools.one',
     description: 'All-in-one social media toolkit with 7 free tools.',
+    images: ['/og-image.png'],
   },
   alternates: { canonical: 'https://socialmediatools.one' },
 };
