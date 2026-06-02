@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Twitter/X Character Counter | SocialMediaTools.one',
     description: 'Count tweet characters in real-time with URL detection and thread splitting.',
-    url: 'https://socialmediatools.one/twitter-character-counter',
+    url: 'https://www.socialmediatools.one/twitter-character-counter',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/twitter-character-counter' },
+  alternates: { canonical: 'https://www.socialmediatools.one/twitter-character-counter' },
 };
 
 const faqs = [

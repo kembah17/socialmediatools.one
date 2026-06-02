@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Hashtag Generator for All Platforms | SocialMediaTools.one',
     description: 'Generate trending hashtags for Instagram, Twitter, TikTok, and LinkedIn instantly.',
-    url: 'https://socialmediatools.one/hashtag-generator',
+    url: 'https://www.socialmediatools.one/hashtag-generator',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/hashtag-generator' },
+  alternates: { canonical: 'https://www.socialmediatools.one/hashtag-generator' },
 };
 
 const faqs = [

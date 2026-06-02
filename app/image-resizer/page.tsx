@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Social Media Image Resizer | SocialMediaTools.one',
     description: 'Resize images for all social media platforms with 12 presets.',
-    url: 'https://socialmediatools.one/image-resizer',
+    url: 'https://www.socialmediatools.one/image-resizer',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/image-resizer' },
+  alternates: { canonical: 'https://www.socialmediatools.one/image-resizer' },
 };
 
 const faqs = [

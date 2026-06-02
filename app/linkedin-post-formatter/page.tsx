@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free LinkedIn Post Formatter | SocialMediaTools.one',
     description: 'Format LinkedIn posts with bold, italic, emojis, and proven templates.',
-    url: 'https://socialmediatools.one/linkedin-post-formatter',
+    url: 'https://www.socialmediatools.one/linkedin-post-formatter',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/linkedin-post-formatter' },
+  alternates: { canonical: 'https://www.socialmediatools.one/linkedin-post-formatter' },
 };
 
 const faqs = [

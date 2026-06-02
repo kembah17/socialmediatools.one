@@ -4,7 +4,7 @@ import { AdSlot } from '@/components/ui/AdSlot';
 export const metadata: Metadata = {
   title: 'Privacy Policy | SocialMediaTools.one',
   description: 'Privacy policy for SocialMediaTools.one. Learn how we protect your data and privacy while using our free social media tools.',
-  alternates: { canonical: 'https://socialmediatools.one/privacy' },
+  alternates: { canonical: 'https://www.socialmediatools.one/privacy' },
 };
 
 export default function PrivacyPage() {

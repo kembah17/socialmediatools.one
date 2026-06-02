@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Social Media Caption Generator | SocialMediaTools.one',
     description: 'Generate engaging captions for all social media platforms instantly.',
-    url: 'https://socialmediatools.one/caption-generator',
+    url: 'https://www.socialmediatools.one/caption-generator',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/caption-generator' },
+  alternates: { canonical: 'https://www.socialmediatools.one/caption-generator' },
 };
 
 const faqs = [

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Instagram Bio Generator | SocialMediaTools.one',
     description: 'Generate creative Instagram bios that fit the 150-character limit instantly.',
-    url: 'https://socialmediatools.one/instagram-bio-generator',
+    url: 'https://www.socialmediatools.one/instagram-bio-generator',
     type: 'website',
   },
-  alternates: { canonical: 'https://socialmediatools.one/instagram-bio-generator' },
+  alternates: { canonical: 'https://www.socialmediatools.one/instagram-bio-generator' },
 };
 
 const faqs = [

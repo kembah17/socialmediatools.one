@@ -9,7 +9,7 @@ const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 export const metadata: Metadata = {
   ...(gscVerification && { verification: { google: gscVerification } }),
-  metadataBase: new URL("https://socialmediatools.one"),
+  metadataBase: new URL("https://www.socialmediatools.one"),
   title: {
     default: "Social Media Tools - Free Online Tools for Social Media | SocialMediaTools.one",
     template: "%s | SocialMediaTools.one",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://socialmediatools.one",
+    url: "https://www.socialmediatools.one",
     siteName: "SocialMediaTools.one",
     title: "Social Media Tools - Free Online Tools for Social Media",
     description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       "Free online social media tools: hashtag generator, caption generator, Instagram bio generator, YouTube tag generator, and more.",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://socialmediatools.one" },
+  alternates: { canonical: "https://www.socialmediatools.one" },
 };
 
 export default function RootLayout({
