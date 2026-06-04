@@ -26,7 +26,7 @@ export function CopyButton({ text, label = 'Copy' }: { text: string; label?: str
       onClick={handleCopy}
       className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer"
       style={{
-        backgroundColor: copied ? 'var(--color-success)' : 'var(--color-brand)',
+        backgroundColor: copied ? 'var(--color-success)' : 'var(--color-brand-darker, var(--color-primary))',
         color: '#FFFFFF',
       }}
     >

@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex items-center gap-2 font-bold text-lg mb-3" style={{ color: 'var(--color-footer-text)' }}>
               <span
                 className="w-7 h-7 rounded-md flex items-center justify-center text-white font-bold text-xs"
-                style={{ backgroundColor: 'var(--color-brand)' }}
+                style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}
               >
                 SM
               </span>

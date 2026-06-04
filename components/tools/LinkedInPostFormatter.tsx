@@ -227,7 +227,7 @@ export function LinkedInPostFormatter() {
           <h3 className="font-semibold mb-3" style={{ color: 'var(--color-text-heading)' }}>Preview</h3>
           <div className="rounded-lg p-4" style={{ backgroundColor: 'var(--color-bg-muted)', border: '1px solid var(--color-border-light)' }}>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full" style={{ backgroundColor: 'var(--color-brand)' }} />
+              <div className="w-10 h-10 rounded-full" style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }} />
               <div>
                 <div className="font-semibold text-sm" style={{ color: 'var(--color-text-heading)' }}>Your Name</div>
                 <div className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Your headline • Just now</div>

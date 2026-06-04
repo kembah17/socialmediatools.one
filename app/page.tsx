@@ -41,7 +41,7 @@ export default function HomePage() {
             Everything you need to create better social media content. Generate hashtags, write captions, build bios, resize images, and more — all free, no signup required.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="/hashtag-generator/" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}>
+            <a href="/hashtag-generator/" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'var(--color-brand-darker)', color: '#FFFFFF' }}>
               Get Started Free
             </a>
             <a href="#tools" className="px-6 py-3 rounded-lg font-semibold transition-all" style={{ backgroundColor: 'color-mix(in srgb, var(--color-brand) 15%, transparent)', color: 'var(--color-brand)', border: '2px solid var(--color-brand)' }}>
