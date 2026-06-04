@@ -61,13 +61,13 @@ export function YouTubeTagGenerator() {
           <div className="flex flex-wrap gap-2">
             <button onClick={() => setSelectedCategory('')}
               className="px-3 py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer"
-              style={{ backgroundColor: !selectedCategory ? 'var(--color-brand)' : 'var(--color-bg-secondary)', color: !selectedCategory ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: !selectedCategory ? 'var(--color-brand)' : 'var(--color-border)' }}>
+              style={{ backgroundColor: !selectedCategory ? 'var(--color-primary)' : 'var(--color-bg-secondary)', color: !selectedCategory ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: !selectedCategory ? 'var(--color-brand)' : 'var(--color-border)' }}>
               All
             </button>
             {tagCategories.map((cat) => (
               <button key={cat.name} onClick={() => setSelectedCategory(cat.name)}
                 className="px-3 py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer capitalize"
-                style={{ backgroundColor: selectedCategory === cat.name ? 'var(--color-brand)' : 'var(--color-bg-secondary)', color: selectedCategory === cat.name ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: selectedCategory === cat.name ? 'var(--color-brand)' : 'var(--color-border)' }}>
+                style={{ backgroundColor: selectedCategory === cat.name ? 'var(--color-primary)' : 'var(--color-bg-secondary)', color: selectedCategory === cat.name ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: selectedCategory === cat.name ? 'var(--color-brand)' : 'var(--color-border)' }}>
                 {cat.name}
               </button>
             ))}
@@ -77,7 +77,7 @@ export function YouTubeTagGenerator() {
         <div className="flex gap-3">
           <button onClick={handleGenerate} disabled={!topic.trim() && !selectedCategory}
             className="px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer"
-            style={{ backgroundColor: (!topic.trim() && !selectedCategory) ? 'var(--color-bg-muted)' : 'var(--color-brand)', color: (!topic.trim() && !selectedCategory) ? 'var(--color-text-muted)' : '#FFFFFF' }}>
+            style={{ backgroundColor: (!topic.trim() && !selectedCategory) ? 'var(--color-bg-muted)' : 'var(--color-primary)', color: (!topic.trim() && !selectedCategory) ? 'var(--color-text-muted)' : '#FFFFFF' }}>
             Generate Tags
           </button>
           <button onClick={handleReset}

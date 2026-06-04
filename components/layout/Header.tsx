@@ -31,7 +31,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 font-bold text-xl" style={{ color: 'var(--color-text-heading)' }}>
             <span
               className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-              style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}
+              style={{ backgroundColor: 'var(--color-primary)', color: '#FFFFFF' }}
             >
               SM
             </span>

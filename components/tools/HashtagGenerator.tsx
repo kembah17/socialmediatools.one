@@ -96,7 +96,7 @@ export function HashtagGenerator() {
           placeholder="e.g. fitness, travel, food photography..."
           className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all"
           style={{ backgroundColor: 'var(--color-bg-input)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)' }}
-          onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-brand)'; }}
+          onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
           onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; }}
         />
 
@@ -109,10 +109,10 @@ export function HashtagGenerator() {
                 onClick={() => toggleCategory(cat.name)}
                 className="px-3 py-1.5 rounded-full text-sm font-medium transition-all cursor-pointer"
                 style={{
-                  backgroundColor: selectedCategories.includes(cat.name) ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: selectedCategories.includes(cat.name) ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: selectedCategories.includes(cat.name) ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: selectedCategories.includes(cat.name) ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: selectedCategories.includes(cat.name) ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {cat.name}
@@ -130,10 +130,10 @@ export function HashtagGenerator() {
                 onClick={() => setPlatform(p.key)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer"
                 style={{
-                  backgroundColor: platform === p.key ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: platform === p.key ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: platform === p.key ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: platform === p.key ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: platform === p.key ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {p.label}
@@ -148,7 +148,7 @@ export function HashtagGenerator() {
             disabled={!topic && selectedCategories.length === 0}
             className="px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer"
             style={{
-              backgroundColor: (!topic && selectedCategories.length === 0) ? 'var(--color-bg-muted)' : 'var(--color-brand)',
+              backgroundColor: (!topic && selectedCategories.length === 0) ? 'var(--color-bg-muted)' : 'var(--color-primary)',
               color: (!topic && selectedCategories.length === 0) ? 'var(--color-text-muted)' : '#FFFFFF',
             }}
           >
@@ -174,7 +174,7 @@ export function HashtagGenerator() {
                   onClick={() => setActiveTab(t.key)}
                   className="px-4 py-2 rounded-md text-sm font-medium transition-all cursor-pointer"
                   style={{
-                    backgroundColor: activeTab === t.key ? 'var(--color-brand)' : 'transparent',
+                    backgroundColor: activeTab === t.key ? 'var(--color-primary)' : 'transparent',
                     color: activeTab === t.key ? '#FFFFFF' : 'var(--color-text-secondary)',
                   }}
                 >

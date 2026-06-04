@@ -60,7 +60,7 @@ export function InstagramBioGenerator() {
               type="text" value={name} onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Sarah" className="w-full px-4 py-3 rounded-lg text-base outline-none"
               style={{ backgroundColor: 'var(--color-bg-input)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)' }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-brand)'; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
               onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; }}
             />
           </div>
@@ -70,7 +70,7 @@ export function InstagramBioGenerator() {
               type="text" value={profession} onChange={(e) => setProfession(e.target.value)}
               placeholder="e.g. Photographer, Designer" className="w-full px-4 py-3 rounded-lg text-base outline-none"
               style={{ backgroundColor: 'var(--color-bg-input)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)' }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-brand)'; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
               onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; }}
             />
           </div>
@@ -82,7 +82,7 @@ export function InstagramBioGenerator() {
             type="text" value={interests} onChange={(e) => setInterests(e.target.value)}
             placeholder="e.g. travel, coffee, design" className="w-full px-4 py-3 rounded-lg text-base outline-none"
             style={{ backgroundColor: 'var(--color-bg-input)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)' }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-brand)'; }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
             onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; }}
           />
         </div>
@@ -106,10 +106,10 @@ export function InstagramBioGenerator() {
                 key={s} onClick={() => setStyle(s)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer capitalize"
                 style={{
-                  backgroundColor: style === s ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: style === s ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: style === s ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: style === s ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: style === s ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {s}
@@ -121,7 +121,7 @@ export function InstagramBioGenerator() {
         <div className="flex gap-3">
           <button onClick={handleGenerate} disabled={!profession.trim()}
             className="px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer"
-            style={{ backgroundColor: !profession.trim() ? 'var(--color-bg-muted)' : 'var(--color-brand)', color: !profession.trim() ? 'var(--color-text-muted)' : '#FFFFFF' }}>
+            style={{ backgroundColor: !profession.trim() ? 'var(--color-bg-muted)' : 'var(--color-primary)', color: !profession.trim() ? 'var(--color-text-muted)' : '#FFFFFF' }}>
             Generate Bios
           </button>
           <button onClick={handleReset}
@@ -145,7 +145,7 @@ export function InstagramBioGenerator() {
                   <span className="text-sm font-medium" style={{ color: over ? 'var(--color-error)' : 'var(--color-text-tertiary)' }}>{len}/150</span>
                 </div>
                 <div className="w-full h-1.5 rounded-full mb-3" style={{ backgroundColor: 'var(--color-bg-secondary)' }}>
-                  <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: over ? 'var(--color-error)' : pct > 80 ? 'var(--color-brand)' : 'var(--color-success)' }} />
+                  <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: over ? 'var(--color-error)' : pct > 80 ? 'var(--color-primary)' : 'var(--color-success)' }} />
                 </div>
                 <pre className="whitespace-pre-wrap font-sans mb-3 leading-relaxed" style={{ color: 'var(--color-text-primary)' }}>{bio}</pre>
                 {over && <p className="text-sm mb-2" style={{ color: 'var(--color-error)' }}>Exceeds 150 character limit by {len - 150}</p>}

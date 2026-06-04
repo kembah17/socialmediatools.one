@@ -82,10 +82,10 @@ export function CaptionGenerator() {
                 onClick={() => setPlatform(p.key)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer"
                 style={{
-                  backgroundColor: platform === p.key ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: platform === p.key ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: platform === p.key ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: platform === p.key ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: platform === p.key ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {p.label}
@@ -103,10 +103,10 @@ export function CaptionGenerator() {
                 onClick={() => setTone(t.key)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer"
                 style={{
-                  backgroundColor: tone === t.key ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: tone === t.key ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: tone === t.key ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: tone === t.key ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: tone === t.key ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {t.label}
@@ -124,7 +124,7 @@ export function CaptionGenerator() {
             placeholder="e.g. morning coffee, new product launch, fitness journey..."
             className="w-full px-4 py-3 rounded-lg text-base outline-none transition-all"
             style={{ backgroundColor: 'var(--color-bg-input)', border: '1px solid var(--color-border)', color: 'var(--color-text-primary)' }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-brand)'; }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = 'var(--color-primary)'; }}
             onBlur={(e) => { e.currentTarget.style.borderColor = 'var(--color-border)'; }}
           />
         </div>
@@ -135,7 +135,7 @@ export function CaptionGenerator() {
             disabled={!topic.trim()}
             className="px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer"
             style={{
-              backgroundColor: !topic.trim() ? 'var(--color-bg-muted)' : 'var(--color-brand)',
+              backgroundColor: !topic.trim() ? 'var(--color-bg-muted)' : 'var(--color-primary)',
               color: !topic.trim() ? 'var(--color-text-muted)' : '#FFFFFF',
             }}
           >

@@ -143,7 +143,7 @@ export function LinkedInPostFormatter() {
           <div className="h-6 w-px mx-1" style={{ backgroundColor: 'var(--color-border)' }} />
           <button onClick={() => setShowEmojis(!showEmojis)}
             className="px-3 py-2 rounded-lg text-sm transition-all cursor-pointer"
-            style={{ backgroundColor: showEmojis ? 'var(--color-brand)' : 'var(--color-bg-secondary)', color: showEmojis ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: showEmojis ? 'var(--color-brand)' : 'var(--color-border)' }}>
+            style={{ backgroundColor: showEmojis ? 'var(--color-primary)' : 'var(--color-bg-secondary)', color: showEmojis ? '#FFFFFF' : 'var(--color-text-secondary)', border: '1px solid', borderColor: showEmojis ? 'var(--color-brand)' : 'var(--color-border)' }}>
             😀 Emoji
           </button>
           <div className="h-6 w-px mx-1" style={{ backgroundColor: 'var(--color-border)' }} />
@@ -170,7 +170,7 @@ export function LinkedInPostFormatter() {
               {Object.keys(EMOJI_CATEGORIES).map((cat) => (
                 <button key={cat} onClick={() => setEmojiCategory(cat)}
                   className="px-2 py-1 rounded text-xs font-medium cursor-pointer"
-                  style={{ backgroundColor: emojiCategory === cat ? 'var(--color-brand)' : 'transparent', color: emojiCategory === cat ? '#FFFFFF' : 'var(--color-text-tertiary)' }}>
+                  style={{ backgroundColor: emojiCategory === cat ? 'var(--color-primary)' : 'transparent', color: emojiCategory === cat ? '#FFFFFF' : 'var(--color-text-tertiary)' }}>
                   {cat}
                 </button>
               ))}
@@ -227,7 +227,7 @@ export function LinkedInPostFormatter() {
           <h3 className="font-semibold mb-3" style={{ color: 'var(--color-text-heading)' }}>Preview</h3>
           <div className="rounded-lg p-4" style={{ backgroundColor: 'var(--color-bg-muted)', border: '1px solid var(--color-border-light)' }}>
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-full" style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }} />
+              <div className="w-10 h-10 rounded-full" style={{ backgroundColor: 'var(--color-primary)', color: '#FFFFFF' }} />
               <div>
                 <div className="font-semibold text-sm" style={{ color: 'var(--color-text-heading)' }}>Your Name</div>
                 <div className="text-xs" style={{ color: 'var(--color-text-muted)' }}>Your headline • Just now</div>

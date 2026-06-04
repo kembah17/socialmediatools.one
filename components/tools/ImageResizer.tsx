@@ -194,7 +194,7 @@ export function ImageResizer() {
           className="rounded-lg p-8 text-center cursor-pointer transition-all"
           style={{
             border: '2px dashed',
-            borderColor: dragging ? 'var(--color-brand)' : 'var(--color-border)',
+            borderColor: dragging ? 'var(--color-primary)' : 'var(--color-border)',
             backgroundColor: dragging ? 'var(--color-brand-lightest)' : 'var(--color-bg-muted)',
           }}
           onClick={() => inputRef.current?.click()}
@@ -232,10 +232,10 @@ export function ImageResizer() {
                     onClick={() => handlePreset(p)}
                     className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all cursor-pointer"
                     style={{
-                      backgroundColor: preset === p ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                      backgroundColor: preset === p ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                       color: preset === p ? '#FFFFFF' : 'var(--color-text-secondary)',
                       border: '1px solid',
-                      borderColor: preset === p ? 'var(--color-brand)' : 'var(--color-border)',
+                      borderColor: preset === p ? 'var(--color-primary)' : 'var(--color-border)',
                     }}
                   >
                     {p.label}
@@ -256,10 +256,10 @@ export function ImageResizer() {
                 onClick={() => handleMode(m)}
                 className="px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer capitalize"
                 style={{
-                  backgroundColor: mode === m ? 'var(--color-brand)' : 'var(--color-bg-secondary)',
+                  backgroundColor: mode === m ? 'var(--color-primary)' : 'var(--color-bg-secondary)',
                   color: mode === m ? '#FFFFFF' : 'var(--color-text-secondary)',
                   border: '1px solid',
-                  borderColor: mode === m ? 'var(--color-brand)' : 'var(--color-border)',
+                  borderColor: mode === m ? 'var(--color-primary)' : 'var(--color-border)',
                 }}
               >
                 {m === 'crop' ? 'Crop to Fill' : 'Fit with Padding'}
@@ -274,7 +274,7 @@ export function ImageResizer() {
             <button
               onClick={handleDownload}
               className="px-6 py-3 rounded-lg font-semibold transition-all cursor-pointer"
-              style={{ backgroundColor: 'var(--color-brand)', color: '#FFFFFF' }}
+              style={{ backgroundColor: 'var(--color-primary)', color: '#FFFFFF' }}
             >
               Download {preset.w}x{preset.h}
             </button>
