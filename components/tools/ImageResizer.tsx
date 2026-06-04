@@ -30,40 +30,52 @@ export function ImageResizer() {
   const [mode, setMode] = useState<'crop' | 'fit'>('crop');
   const [previewUrl, setPreviewUrl] = useState('');
   const [dragging, setDragging] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const processImage = useCallback((img: HTMLImageElement, p: Preset, m: 'crop' | 'fit') => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    canvas.width = p.w;
-    canvas.height = p.h;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    try {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      canvas.width = p.w;
+      canvas.height = p.h;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        setError('Failed to get canvas context. Your browser may not support this operation.');
+        return;
+      }
 
-    if (m === 'crop') {
-      const scale = Math.max(p.w / img.width, p.h / img.height);
-      const sw = p.w / scale;
-      const sh = p.h / scale;
-      const sx = (img.width - sw) / 2;
-      const sy = (img.height - sh) / 2;
-      ctx.drawImage(img, sx, sy, sw, sh, 0, 0, p.w, p.h);
-    } else {
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(0, 0, p.w, p.h);
-      const scale = Math.min(p.w / img.width, p.h / img.height);
-      const dw = img.width * scale;
-      const dh = img.height * scale;
-      const dx = (p.w - dw) / 2;
-      const dy = (p.h - dh) / 2;
-      ctx.drawImage(img, 0, 0, img.width, img.height, dx, dy, dw, dh);
+      if (m === 'crop') {
+        const scale = Math.max(p.w / img.width, p.h / img.height);
+        const sw = p.w / scale;
+        const sh = p.h / scale;
+        const sx = (img.width - sw) / 2;
+        const sy = (img.height - sh) / 2;
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, p.w, p.h);
+      } else {
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, p.w, p.h);
+        const scale = Math.min(p.w / img.width, p.h / img.height);
+        const dw = img.width * scale;
+        const dh = img.height * scale;
+        const dx = (p.w - dw) / 2;
+        const dy = (p.h - dh) / 2;
+        ctx.drawImage(img, 0, 0, img.width, img.height, dx, dy, dw, dh);
+      }
+
+      setPreviewUrl(canvas.toDataURL('image/png'));
+      setError(null);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred while processing the image.';
+      setError(`Image processing failed: ${message}`);
+      setPreviewUrl('');
     }
-
-    setPreviewUrl(canvas.toDataURL('image/png'));
   }, []);
 
   const loadImage = useCallback((file: File) => {
     setFileName(file.name);
+    setError(null);
     const reader = new FileReader();
     reader.onload = (e) => {
       const img = new Image();
@@ -71,7 +83,13 @@ export function ImageResizer() {
         setImage(img);
         processImage(img, preset, mode);
       };
+      img.onerror = () => {
+        setError('Failed to load image. The file may be corrupted or in an unsupported format.');
+      };
       img.src = e.target?.result as string;
+    };
+    reader.onerror = () => {
+      setError('Failed to read file. Please try again.');
     };
     reader.readAsDataURL(file);
   }, [preset, mode, processImage]);
@@ -90,28 +108,43 @@ export function ImageResizer() {
 
   const handlePreset = (p: Preset) => {
     setPreset(p);
+    setError(null);
     if (image) processImage(image, p, mode);
   };
 
   const handleMode = (m: 'crop' | 'fit') => {
     setMode(m);
+    setError(null);
     if (image) processImage(image, preset, m);
   };
 
   const handleDownload = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    canvas.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      const ext = fileName.split('.').pop() || 'png';
-      const base = fileName.replace(/\.[^.]+$/, '');
-      a.download = `${base}_${preset.w}x${preset.h}.${ext}`;
-      a.click();
-      URL.revokeObjectURL(url);
-    }, 'image/png');
+    try {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      canvas.toBlob((blob) => {
+        try {
+          if (!blob) {
+            setError('Failed to generate image for download. Please try a different format or size.');
+            return;
+          }
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          const ext = fileName.split('.').pop() || 'png';
+          const base = fileName.replace(/\.[^.]+$/, '');
+          a.download = `${base}_${preset.w}x${preset.h}.${ext}`;
+          a.click();
+          URL.revokeObjectURL(url);
+        } catch (err) {
+          const message = err instanceof Error ? err.message : 'An unexpected error occurred during download.';
+          setError(`Download failed: ${message}`);
+        }
+      }, 'image/png');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred.';
+      setError(`Download failed: ${message}`);
+    }
   };
 
   const handleReset = () => {
@@ -120,6 +153,7 @@ export function ImageResizer() {
     setPreviewUrl('');
     setPreset(PRESETS[0]);
     setMode('crop');
+    setError(null);
     if (inputRef.current) inputRef.current.value = '';
   };
 
@@ -128,6 +162,33 @@ export function ImageResizer() {
   return (
     <div className="space-y-6">
       <div className="rounded-xl p-6" style={{ backgroundColor: 'var(--color-bg-card)', border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-md)' }}>
+        {/* Error display */}
+        {error && (
+          <div
+            className="mb-4 p-4 rounded-lg text-sm"
+            style={{
+              backgroundColor: 'rgba(239, 68, 68, 0.1)',
+              border: '1px solid rgba(239, 68, 68, 0.3)',
+              color: '#ef4444',
+            }}
+          >
+            <div className="flex items-start gap-2">
+              <span className="flex-shrink-0 mt-0.5">⚠️</span>
+              <div>
+                <p className="font-medium">Error</p>
+                <p className="mt-1">{error}</p>
+              </div>
+              <button
+                onClick={() => setError(null)}
+                className="ml-auto flex-shrink-0 p-1 rounded hover:opacity-70 transition-opacity"
+                aria-label="Dismiss error"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Upload area */}
         <div
           className="rounded-lg p-8 text-center cursor-pointer transition-all"
