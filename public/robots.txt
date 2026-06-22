@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.socialmediatools.one
+Host: https://socialmediatools.one
 
 # Sitemaps
-Sitemap: https://www.socialmediatools.one/sitemap.xml
+Sitemap: https://socialmediatools.one/sitemap.xml

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.socialmediatools.one',
+  siteUrl: 'https://socialmediatools.one',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   outDir: './out',
